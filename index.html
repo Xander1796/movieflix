@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+    <title>MOVIEFLIX</title>
+  </head>
+  <body class="body-overflow-hidden">
+    
+    <div class="netflix-intro">
+      <h1 class="netflix-intro-text user-select-none">MOVIEFLIX</h1>
+    </div>
+    <div class="netflix-intro-mask"></div>
+    <div class="image-favorite-animation-container"></div>
+    
+    <div class="remove-check-overlay">
+      <div class="remove-check-actions-wrapper">
+        <h3 class="remove-check-text">All movies in your favorites list will be removed.</h3>
+  
+        <div class="remove-check-buttons-wrapper">
+          <button class="remove-check-no-button  remove-check-button remove-cancel">
+            <i class="fas fa-times remove-check-no-icon remove-check-icon remove-cancel"></i>
+            <span class="remove-check-no-message">Cancel</span>
+          </button>
+          <button class="remove-check-yes-button remove-check-button remove-cancel check-yes-remove-all">
+            <i class="fas fa-check remove-check-yes-icon remove-check-icon remove-cancel check-yes-remove-all"></i>
+            <span class="remove-check-yes-message">Yes, do it.</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="close-remove-check-overlay">
+        <button class="close-remove-check-overlay-button remove-cancel">
+          <i class="fas fa-times close-remove-check-icon remove-cancel"></i>
+        </button>
+        <span class="close-remove-check-overlay-text remove-cancel user-select-none">Close window</span>
+      </div>
+    </div>
+
+    <div class="movie-trailer-container">
+      <div class="close-movie-trailer-container">
+        <i class="fas fa-times close-movie-trailer"></i>
+      </div>
+      
+      <div class="movie-trailer-actions-container">
+        <div class="title-and-icons">
+          <h2 class="movie-trailer-title">Trailers</h2>
+
+          <div class="add-to-favorite-container-trailer">
+            <i class="fas fa-plus add-to-favorite-trailer"></i>
+            <span class="add-to-favorite-message">Add to favorite</span>    
+          </div>
+        </div>
+
+        <div class="next-prev-trailer-container">
+          <i class="fas fa-angle-left prev-trailer-button next-prev-button-inactive"></i>
+          <span class="prev-trailer-title next-prev-button-inactive user-select-none">Previous Trailer</span>
+          <div class="number-of-trailers user-select-none">
+            <span class="current-trailer-number">1 </span>
+            <span class="total-trailers-number"></span>
+          </div>
+          <span class="next-trailer-title user-select-none">Next Trailer</span>
+          <i class="fas fa-angle-right next-trailer-button"></i>
+        </div>
+
+        <span class="no-trailers-found">No trailers found.</span>
+      </div>
+
+      <div class="iframe-container">
+        <iframe title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+  <div class="movieflix-highlight-container section-inactive"></div>
+
+    <header>
+      <nav>
+        <svg class="nav-app-logo user-select-none" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_1077_150)">
+          <path d="M4 13.5V4H6V14L4 13.5Z" fill="#BD1624"/>
+          </g>
+          <g filter="url(#filter1_d_1077_150)">
+          <path d="M8 10L4 4H6L10 10H8Z" fill="#FF1D2F"/>
+          </g>
+          <g filter="url(#filter2_d_1077_150)">
+          <path d="M12 4L8 10H10L14 4H12Z" fill="#BD1624"/>
+          </g>
+          <g filter="url(#filter3_d_1077_150)">
+          <path d="M14 14V4H12V13.5L14 14Z" fill="#FF1D2F"/>
+          </g>
+          <defs>
+          <filter id="filter0_d_1077_150" x="0" y="0" width="10" height="18" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1077_150"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1077_150" result="shape"/>
+          </filter>
+          <filter id="filter1_d_1077_150" x="0" y="0" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1077_150"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1077_150" result="shape"/>
+          </filter>
+          <filter id="filter2_d_1077_150" x="4" y="0" width="14" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1077_150"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1077_150" result="shape"/>
+          </filter>
+          <filter id="filter3_d_1077_150" x="8" y="0" width="10" height="18" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1077_150"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1077_150" result="shape"/>
+          </filter>
+          </defs>
+        </svg>          
+        <i class="fab fa-sistrix search-mobile-icon"></i>
+        <div class="search-mobile-container">
+          <i class="fas fa-arrow-left close-search-mobile-container"></i>
+          <input type="search" placeholder="Search for movies, tv shows" results="0" class="search-mobile-input" maxlength="30">
+        </div>
+
+        <div class="nav-content-wrapper">
+          <div class="nav-option-line-anim"></div>
+          <span  class="movie-option nav-option-active nav-options user-select-none" data-type="movies">Movies</span>
+          <span  class="series-option nav-option-inactive nav-options user-select-none" data-type="series">TV Series</span>  
+          <div class="nav-search-and-favorites">
+            <div class="nav-search-container">
+              <div class="nav-search-button">
+                <i class="fab fa-sistrix search-desktop-icon"></i>
+                <span class="nav-search-button-message user-select-none">Search</span>
+              </div>
+              <input class="search-input" type="search" placeholder="Search for movies, tv shows" results="0" maxlength="30">
+            </div>
+
+            <div class="nav-favorites-button-container nav-fav-inactive">
+              <i class="far fa-heart nav-favorites-button nav-fav-inactive">
+                <span class="nav-favorites-button-notification nav-fav-inactive"></span>
+              </i>
+              <span class="nav-favorites-button-message user-select-none">My list</span>
+            </div>
+          </div>  
+        </div>
+      </nav>
+    </header>
+
+    <div class="movieflix-highlight-divider"></div>
+    <main class="section-inactive">
+
+    <section class="movie-section">
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="drama"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="action"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="horror"></div>
+            <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="comedy"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="scienceFiction"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-counter="1" data-prev-active="false" data-next-active="false" data-test="0" data-items-in-view="0" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>  
+  
+        <div class="movie-container container-transform-origin container-slider">
+          <div class="movie-wrapper wrapper-slider" data-movie-type="animation"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+          <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+        </div>
+  
+    </section>
+
+    <section class="series-section">
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="drama"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="action"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="horror"></div>
+          <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="comedy"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="scienceFiction"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>  
+
+      <div class="series-container container-transform-origin container-slider">
+        <div class="series-wrapper wrapper-slider" data-movie-type="animation"></div>
+        <div class="left-arrow left-arrow-inactive slider-prev-button slider-prev"><i class="fas fa-chevron-left slider-icon slider-prev"></i></div>
+        <div class="right-arrow slider-next-button slider-next"><i class="fas fa-chevron-right slider-icon slider-next"></i></div>
+      </div>
+
+  </section>
+
+  <section class="all-movie-tv-section container-transform-origin">
+    <h2 class="all-movie-tv-title"><i class="fas fa-arrow-left close-all-movie-tv-section"></i> Action-Movies</h2>
+    <div class="all-movie-tv-wrapper"></div>
+    <svg class="loading-spinner" viewBox="25 25 50 50">
+      <circle cx="50" cy="50" r="20"></circle>
+    </svg>  
+  </section>
+
+  <section class="favorite-movies-container container-transform-origin container-slider">    
+    <div class="favorite-movies-actions-container">
+      <div class="favorite-movies-actions">
+        <button class="favorite-movies-action-back-button close-favorite-list user-select-none">
+          <i class="fas fa-arrow-left favorite-action-back-icon-arrow close-favorite-list"></i>
+          <span class="favorite-action-back-button-text close-favorite-list">Back</span>
+        </button>
+        <button class="favorite-movies-action-remove-button remove-all-favorite-movies user-select-none">
+          <i class="far fa-trash-alt favorite-action-icon-remove remove-all-favorite-movies"></i>
+          <span class="favorite-action-remove-button-text remove-all-favorite-movies">Remove all</span>
+        </button>
+      </div>
+
+      <div class="favorite-movies-icon-title">
+        <div class="favorite-movies-icon-container"></div>
+        <h2 class="my-favorite-list-title">My list</h2>
+      </div>
+
+    </div>
+  
+    <div class="favorite-movies-wrapper"></div>
+    <div class="favorite-movies-empty-list">
+      <div class="empty-list-svg"></div>
+      <h3 class="favorite-movies-empty-list-message">Your list is empty.</h3>
+    </div>
+    <!-- <div class="remove-undo-container">
+      <p class="remove-undo-message"><span class="remove-undo-message-title">The movie</span> has been removed from my list</p>
+      <button class="remove-undo-button-cancel"><i class="fas fa-undo-alt remove-undo-button-cancel-icon"></i>Cancel</button>
+    </div> -->
+  </section>
+
+  <section class="search-section container-transform-origin container-slider">
+    <div class="search-title-container">
+      <h2 class="search-title"><i class="fab fa-sistrix search-desktop-icon"></i> TV SERIES AND MOVIES</h2>
+      <svg class="search-loading-spinner" viewBox="25 25 50 50">
+        <circle cx="50" cy="50" r="20"></circle>
+      </svg>  
+    </div>
+    <div class="no-search-results-message">
+      Hmmm...It appears that there are no results.
+      <div class="no-search-results-svg"></div>
+    </div>
+    <div class="search-section-wrapper"></div>
+  </section>
+
+</main>
+
+<section class="movie-info-section section-inactive">
+  <div class="movie-info-section-container movie-info-section-child"></div>
+</section>
+
+<footer>
+  <div class="footer-creator">
+    <p>Developed by <span>Alexandru Florian</span></p>
+  </div>
+  <p class="footer-credits">Using <a href="https://developers.themoviedb.org/3" target="_blank">TMDB API</a></p>
+  <span>&copy; 2021 All rights reserved</span>
+</footer>
+
+</body>
+</html>
