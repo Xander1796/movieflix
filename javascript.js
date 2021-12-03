@@ -693,7 +693,7 @@ const iJustTest = async function() {
   
   highlightMovieResponse.genres.forEach((genre, i) => {
      if(i >= 2) return;
-     highlightMovieGenres.push(genre.name);
+     highlightMovieGenres.push(" " + genre.name);
   });
   
   const movieTagline = highlightMovieResponse.tagline ? `<p class="movie-highlight-tagline">
@@ -828,7 +828,7 @@ const insertDataMovieHover = async function(child) {
     </span>`);
       movieRuntimesResponse.genres.forEach((genre, i) => {
         child.querySelector('.movie-info-genre-container').insertAdjacentHTML('beforeend', `
-           <span class="movie-info-genre">${i <= 3 ? genre.name : ''}${movieRuntimesResponse.genres.length - 1 === i || i >= 3 ? '' : ','}</span>        
+           <span class="movie-info-genre">${i <= 3 ? genre.name : ''}${movieRuntimesResponse.genres.length - 1 === i || i >= 3 ? '' : ',\u00A0'}</span>        
         `)
       })
 
@@ -1755,23 +1755,23 @@ const searchMobileContainerAnimationFunction = function() {
       let productionCompaniesArray = [];
 
       for(let i = 0; i < response.genres.length; i++) {
-        aboutGenresArray.push(response.genres[i].name);
+        aboutGenresArray.push(" " + response.genres[i].name);
       };
 
       for(let i = 0; i < 3 && i < response.genres.length; i++) {
-        highlightGenresArray.push(response.genres[i].name);
+        highlightGenresArray.push(" " + response.genres[i].name);
       };
 
       for(let i = 0; i < 3 && i < response.credits.cast.length; i++) {
-        castHighlightArray.push(response.credits.cast[i].name);
+        castHighlightArray.push(" " + response.credits.cast[i].name);
       };
 
       for(let i = 0; i < 11 && i < response.credits.cast.length; i++) {
-        castAboutArray.push(response.credits.cast[i].name);
+        castAboutArray.push(" " + response.credits.cast[i].name);
       };
 
       for(let i = 0; i < 5 && i < response.production_companies.length; i++) {
-        productionCompaniesArray.push(response.production_companies[i].name);
+        productionCompaniesArray.push(" " + response.production_companies[i].name);
       };
 
       movieInfoSectionContainer.dataset.id = child.dataset.id;
