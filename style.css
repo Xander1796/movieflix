@@ -2979,6 +2979,12 @@ footer {
   margin-left: 2rem;
 }
 
+@media (min-width: 2000px) {
+  html {
+    font-size: 72%;
+  }
+}
+
 @media (max-width: 1600px) {
   .child,
   .favorite-child,
