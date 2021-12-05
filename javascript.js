@@ -231,7 +231,7 @@ const wasLoaded = {
   highlight: false
 };
 
-if(localStorage.length > 0) {
+if(localStorage.getItem('favorites')) {
   if(JSON.parse(localStorage.getItem('favorites')).length > 0) favorites = JSON.parse(localStorage.getItem('favorites'));
 };
 
@@ -585,7 +585,7 @@ const checkExistingFavoriteStorage = function(movieId, favorite, favoriteContain
 
   if(favoriteContainer) favoriteContainer.classList.remove('added-to-favorite');
 
-  if(localStorage.length > 0) {
+  if(localStorage.getItem('favorites') && localStorage.getItem('favorites').length > 0) {
     if(JSON.parse(localStorage.getItem('favorites')).some(movie => movie.id === movieId)) {
       if(favorite && !favorite.classList.contains('favorite-button-anim') && !favorite.classList.contains('fa-check')) {
         favorite.classList.add('favorite-button-anim');
@@ -1502,7 +1502,7 @@ const searchMobileContainerAnimationFunction = function() {
      };
 
     
-    if(localStorage.length > 0 && JSON.parse(localStorage.getItem('favorites')).length > 0) {
+    if(localStorage.getItem('favorites') && JSON.parse(localStorage.getItem('favorites')).length > 0) {
         favoriteListFunction(favorites);
     };
 
