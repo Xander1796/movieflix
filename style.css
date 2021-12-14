@@ -924,38 +924,6 @@ i {
   background-repeat: no-repeat;
 }
 
-.movie-highlight-animation {
-  animation: movie-highlight-animation 0.2s ease forwards;
-}
-
-.movie-highlight-animation:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.movie-highlight-animation:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.movie-highlight-animation:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-.movie-highlight-animation:nth-child(4) {
-  animation-delay: 0.5s;
-}
-
-@keyframes movie-highlight-animation {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 .movie-highlight-info {
   display: flex;
   flex-direction: column;
@@ -982,15 +950,6 @@ i {
   font-size: 4rem;
   font-weight: 900;
   color: var(--secondary-color-1);
-}
-
-.movie-highlight-name,
-.movie-highlight-info-overview,
-.movie-highlight-info-date-genres,
-.movie-highlight-info-actions {
-  transform-origin: top;
-  transform: translateY(-100%);
-  opacity: 0;
 }
 
 .movie-highlight-tagline {
@@ -2420,7 +2379,7 @@ button {
   }
 }
 
-.movie-info-section-inactive {
+/* .movie-info-section-inactive {
   display: flex;
   animation: movie-info-section-inactive 0.2s ease forwards;
 }
@@ -2442,7 +2401,7 @@ button {
     opacity: 0;
   }
 }
-
+ */
 .movie-info-section-container {
   position: relative;
   margin-top: 3.8rem;
@@ -2451,28 +2410,27 @@ button {
   width: 108rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(100%);
 }
 
 .movie-info-section-container-active {
-  animation: movie-info-section-container-active 0.4s 0.1s ease forwards;
+  animation: movie-info-section-container-active 0.4s ease forwards;
 }
 
 @keyframes movie-info-section-container-active {
   0% {
-    transform: translateY(100%);
+    transform: scale(.7);
     opacity: 1;
     visibility: visible;
   }
 
   100% {
-    transform: translateY(0%);
+    transform: scale(1);
     opacity: 1;
     visibility: visible;
   }
 }
 
-.movie-info-section-container-inactive {
+/* .movie-info-section-container-inactive {
   animation: movie-info-section-container-inactive 0.4s ease forwards;
 }
 
@@ -2493,7 +2451,7 @@ button {
     visibility: hidden;
     opacity: 0;
   }
-}
+} */
 
 .close-movie-info-section-button {
   display: flex;

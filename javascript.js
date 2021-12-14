@@ -706,9 +706,9 @@ const iJustTest = async function() {
   <div class="movie-highlight-overlay"></div>
   <img alt="Movie Poster: ${movieName}" src="${baseImgUrl}original${highlightMovieResponse.poster_path}" alt="" class=" img-highlight-title user-select-none">
   <div class="movie-highlight-info" data-id="${highlightMovieResponse.id.toString()}" data-type="${moviesOrSeries}" data-name="${movieName}">
-  <h1 class="movie-highlight-name movie-highlight-animation">${movieName.length > 25 ? movieName.toUpperCase().split('').splice(0, 25).join('').concat('...') : movieName}
+  <h1 class="movie-highlight-name">${movieName.length > 25 ? movieName.toUpperCase().split('').splice(0, 25).join('').concat('...') : movieName}
   </h1>
-  <div class="movie-highlight-info-date-genres movie-highlight-animation">
+  <div class="movie-highlight-info-date-genres">
   <span class="movie-highlight-info-date">${moviesOrSeries === 'movie' ? highlightMovieResponse.release_date.substring(0, 4) : highlightMovieResponse.first_air_date.substring(0, 4)}</span>
   <span class="highlight-delimitator"></span>
   <span class="movie-highlight-mobile-genre">${highlightMovieMobileGenre}</span>
@@ -720,8 +720,8 @@ const iJustTest = async function() {
   ${moviesOrSeries === 'movie' ? movieRuntimeConvert(highlightMovieResponse.runtime) : seasons}
   </span>
   </div>
-  <p class="movie-highlight-info-overview movie-highlight-animation">${highlightMovieResponse.overview.length >= 180 ? highlightMovieResponse.overview.slice(0, 180).concat('...') : highlightMovieResponse.overview}</p>
-    <div class="movie-highlight-info-actions movie-highlight-animation">
+  <p class="movie-highlight-info-overview">${highlightMovieResponse.overview.length >= 180 ? highlightMovieResponse.overview.slice(0, 180).concat('...') : highlightMovieResponse.overview}</p>
+    <div class="movie-highlight-info-actions">
       <div class="movie-highlight-add-favorite-container">
         <i class="fas fa-plus movie-highlight-add-favorite-icon"></i>
         <span class="movie-highlight-add-favorite-text user-select-none">My list</span>
@@ -1971,7 +1971,6 @@ movieInfoSection.addEventListener('click', function(e) {
 
 
   if(e.target.classList.contains('close-movie-info-section') || e.target.classList.contains('movie-info-section-active') || e.target.classList.contains('close-info-section-mobile')) {
-    setTimeout(function() {
       movieInfoContainerActions.containerHiddenWhenPlayingTrailer = false;
       movieInfoSection.classList.add('section-inactive');
       movieInfoSection.classList.remove('movie-info-section-active');
@@ -1988,7 +1987,6 @@ movieInfoSection.addEventListener('click', function(e) {
       for(const child of movieInfoSectionContainer.children) {
         child.remove();
       };
-    }, 300);
         
 
     movieInfoSectionHighlightImage.removeEventListener('load', loadImgHighlightMovieInfo);
