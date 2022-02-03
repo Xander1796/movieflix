@@ -2943,6 +2943,12 @@ footer {
   }
 }
 
+@media (min-width: 2200px) {
+  html {
+    font-size: 90%;
+  }
+}
+
 @media (max-width: 1600px) {
   .child,
   .favorite-child,
@@ -4253,42 +4259,3 @@ footer {
   }
 }
 
-/* @media (max-height: 500px) {
-  :root {
-    --nav-height: 11vh;
-  }
-
-  .movieflix-highlight-divider {
-    margin-bottom: 69vh;
-  }
-
-  .search-section {
-    margin-top: 25vh;
-  }
-
-  .favorite-movies-wrapper {
-    margin-top: 38vh;
-  }
-
-  .favorite-movies-actions-container {
-    top: 10vh;
-  }
-}
-
-@media (max-height: 400px) {
-  :root {
-    --nav-height: 14vh;
-  }
-
-  .movieflix-highlight-divider {
-    margin-bottom: 76vh;
-  }
-
-  .search-section {
-    margin-top: 33vh;
-  }
-
-  .favorite-movies-wrapper {
-    margin-top: 38vh;
-  }
-} */
